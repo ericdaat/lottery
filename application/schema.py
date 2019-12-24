@@ -1,12 +1,12 @@
 from marshmallow_sqlalchemy import ModelSchema
 
-from application.model import session, User
+from application.model import session, Number
 
 
-class UserSchema(ModelSchema):
+class NumberSchema(ModelSchema):
     class Meta:
         sqla_session = session
-        model = User
+        model = Number
         fields = (
-            "username", "email"
+            "value"
         )

@@ -40,8 +40,9 @@ def create_app(config=None):
     app.register_error_handler(404, errors.page_not_found)
 
     # blueprints
-    from application.blueprints import home
+    from application.blueprints import home, api
     app.register_blueprint(home.bp)
+    app.register_blueprint(api.bp)
 
     # request handlers
     @app.after_request
