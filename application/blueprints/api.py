@@ -5,9 +5,10 @@ from application import utils
 bp = Blueprint("api", __name__, url_prefix="/api")
 
 
-@bp.route("/draw")
+@bp.route("/draw", methods=["POST",])
 def draw():
-    number = utils.draw_number()
+    issued_numbers = utils.get_issued_numbers()
+    number = utils.draw_number(issued_numbers)
 
     return jsonify(number=number)
 

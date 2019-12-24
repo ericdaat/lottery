@@ -2,32 +2,40 @@
 
 {% block body %}
 <section class="section">
-<div class="container">
-    <h1 class="title">
-    Loto de Noel
-    </h1>
-    <p class="subtitle">
-    Générateur de numéros
-    </p>
-</div>
+    <div class="container">
+        <h1 class="title">
+        Loto de Noel
+        </h1>
+        <p class="subtitle">
+        Générateur de numéros
+        </p>
+    </div>
+
+    <div class="container">
+        <button
+            class="button is-primary"
+            onclick="draw()">
+            Draw
+        </button>
+    </div>
 </section>
 
 <section>
-<div class="container">
-    <table class="table">
-        {% for i in numbers %}
-            {% if i in issued_numbers %}
-                <td><span class="circle">{{ i }}</span></td>
-            {% else %}
-                <td><span>{{ i }}</span></td>
-            {% endif %}
+    <div class="container">
+        <table class="table">
+            {% for i in numbers %}
+                {% if i in issued_numbers %}
+                    <td><span class="circle">{{ i }}</span></td>
+                {% else %}
+                    <td><span>{{ i }}</span></td>
+                {% endif %}
 
-            {% if i % 10 == 0 %}
-                <tr>
-            {% endif %}
-        {% endfor %}
-        <td></td>  <!-- Last number is blank -->
-    </table>
-</div>
+                {% if i % 10 == 0 %}
+                    <tr>
+                {% endif %}
+            {% endfor %}
+            <td></td>  <!-- Last number is blank -->
+        </table>
+    </div>
 </section>
 {% endblock %}
