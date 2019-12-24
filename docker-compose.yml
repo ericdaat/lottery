@@ -1,0 +1,17 @@
+version: "3"
+services:
+  python:
+    build: .
+
+  app:
+    image: flask-template_python:latest
+    ports:
+     - 8080:8080
+    volumes:
+     - ./application:/src/application
+     - ./foo.sqlite:/src/foo.sqlite
+    working_dir: /src/
+    environment:
+      PYTHONPATH: /src
+      DATABASE_URL: sqlite:///../db.sqlite3
+    command: ["python", "application/wsgi.py"]
