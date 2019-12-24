@@ -15,12 +15,15 @@
 <section>
 <div class="container">
     <table class="table">
-        {% for i in range(1, 100) %}
-            {% if i % 10 == 0 %}
-                <td>{{ i }}</td>
-                <tr>
+        {% for i in numbers %}
+            {% if i in issued_numbers %}
+                <td><p class="circle">{{ i }}</p></td>
             {% else %}
-                <td>{{ i }}</td>
+                <td><p>{{ i }}</p></td>
+            {% endif %}
+
+            {% if i % 10 == 0 %}
+                <tr>
             {% endif %}
         {% endfor %}
         <td></td>  <!-- Last number is blank -->
