@@ -1,10 +1,13 @@
 import os
+import logging
 
 from flask import Flask
 from werkzeug.contrib.fixers import ProxyFix
 
 from application import errors, cli
 from application.model import db, session
+
+logging.basicConfig(level=logging.INFO)
 
 
 def create_app(config=None):
