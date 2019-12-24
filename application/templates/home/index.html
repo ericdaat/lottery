@@ -1,6 +1,30 @@
 {% extends "base.html" %}
 
 {% block body %}
-<h1>Home</h1>
-<p>Hello there</p>
+<section class="section">
+<div class="container">
+    <h1 class="title">
+    Loto de Noel
+    </h1>
+    <p class="subtitle">
+    Générateur de numéros
+    </p>
+</div>
+</section>
+
+<section>
+<div class="container">
+    <table class="table">
+        {% for i in range(1, 100) %}
+            {% if i % 10 == 0 %}
+                <td>{{ i }}</td>
+                <tr>
+            {% else %}
+                <td>{{ i }}</td>
+            {% endif %}
+        {% endfor %}
+        <td></td>  <!-- Last number is blank -->
+    </table>
+</div>
+</section>
 {% endblock %}
