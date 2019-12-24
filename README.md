@@ -1,4 +1,6 @@
-# Christmas Loto app
+# Lottery Drawing
+
+A lottery drawing application that randomly draws numbers from 1 to 99, and displays them on a table.
 
 ## Install
 
