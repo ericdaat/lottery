@@ -1,6 +1,9 @@
 # Lottery Drawing
 
-A lottery drawing application that randomly draws numbers from 1 to 99, and displays them on a table.
+A lottery drawing application that randomly draws numbers from 1 to 99,
+and displays them on a table.
+
+![alt](docs/source/_static/screenshot.png)
 
 ## Install
 

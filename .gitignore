@@ -18,3 +18,4 @@ docs/build
 credentials.env
 *.db
 *.sqlite3
+.DS_Store
