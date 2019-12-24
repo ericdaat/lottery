@@ -22,3 +22,13 @@ function draw() {
     )
     setTimeout(location.reload.bind(location), 200);
 }
+
+
+function reset() {
+    makeRequest(
+        "POST",
+        "/api/reset",
+        {}
+    )
+    setTimeout(location.reload.bind(location), 200);
+}

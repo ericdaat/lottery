@@ -20,11 +20,18 @@ def draw_number(issued_numbers):
 
     return number
 
+
 def get_issued_numbers():
     issued_numbers = Number.query.all()
     numbers = [n.value for n in issued_numbers]
 
     return set(numbers)
+
+
+def get_last_number_issued():
+    number = Number.query.order_by(Number.created_at.desc()).first()
+
+    return number
 
 
 def insert_number_in_db(number):
@@ -33,3 +40,8 @@ def insert_number_in_db(number):
     session.commit()
 
     return number_to_insert
+
+
+def reset_numbers():
+    Number.query.delete()
+    session.commit()

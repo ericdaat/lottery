@@ -26,3 +26,10 @@ def get_numbers():
     numbers = utils.get_issued_numbers()
 
     return jsonify(numbers=numbers)
+
+
+@bp.route("/reset", methods=["POST",])
+def reset():
+    utils.reset_numbers()
+
+    return jsonify()
