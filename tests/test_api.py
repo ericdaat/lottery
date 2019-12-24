@@ -7,7 +7,7 @@ from application.model import Number, session
 
 
 def test_draw(client):
-    response = client.get(url_for('api.draw_random_number'))
+    response = client.get(url_for('api.draw'))
 
     assert response.status_code == HTTPStatus.OK
     assert "number" in response.json
@@ -28,7 +28,7 @@ def test_insert(client):
     }
 
     response = client.post(
-        url_for("api.insert_number_in_db"),
+        url_for("api.insert"),
         data=json.dumps(data),
         headers=headers
     )
@@ -52,7 +52,7 @@ def test_get_issued_numbers(client):
     session.add(Number(value=7))
     session.commit()
 
-    response = client.get(url_for('api.get_issued_numbers'))
+    response = client.get(url_for('api.get_numbers'))
 
     assert response.status_code == HTTPStatus.OK
     assert "numbers" in response.json

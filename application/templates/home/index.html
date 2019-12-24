@@ -17,9 +17,9 @@
     <table class="table">
         {% for i in numbers %}
             {% if i in issued_numbers %}
-                <td><p class="circle">{{ i }}</p></td>
+                <td><span class="circle">{{ i }}</span></td>
             {% else %}
-                <td><p>{{ i }}</p></td>
+                <td><span>{{ i }}</span></td>
             {% endif %}
 
             {% if i % 10 == 0 %}
